@@ -1,6 +1,7 @@
 # Graduation project 2024_2
 
-Resnet34 , CIFAR10 dataset을 사용해 학습하고 추론시간을 단축하기 위한 프로젝트
+DL model inference time 단축하기 위한 프로젝트
+Resnet34 , CIFAR10 dataset을 사용해 학습
 Edge device : Jetson Orin Nano
 Jetpack 5.1.2 , Tensorflow==2.12.0+nv23.06
 
@@ -76,6 +77,16 @@ Min inference time: 17.259194135665894 seconds
 ```
 
 thread에 따른 효과 X
+
+추후 진행사항
+TensorRT 변환해서 추론 시간 측정
+1) CPU 추론 시 추론시간 --> pidstat 등으로 cpu사용률 체크
+2) GPU 추론 시 추론시간을 줄이는 방법에 대한 연구 (여기에 중점)
+   
+
+
+
+
 
 
 
