@@ -41,7 +41,7 @@ Min inference time: 216.96071934700012 seconds
 thread가 증가할수록 추론시간이 단축
 
 
-## Mid results gpu
+## Mid results // gpu
 
 ```
 Model used: resnet34_cifar10_bs64_epochs10.keras
@@ -81,8 +81,9 @@ Min inference time: 17.259194135665894 seconds
 
 thread에 따른 효과 X
 
-추후 진행사항
 
+
+추후 진행사항
 TensorRT 변환해서 추론 시간 측정
 
 1) CPU 추론 시 추론시간 --> pidstat 등으로 cpu사용률 체크
