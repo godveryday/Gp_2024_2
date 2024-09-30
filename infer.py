@@ -2,12 +2,30 @@ import os
 import tensorflow as tf
 import time
 import numpy as np
+import subprocess
 
 # GPU 설정 및 스레드 설정
 USE_GPU = True  # GPU 사용 여부 설정
 THREADS = None  # 스레드 수 설정 (None이면 자동으로 설정됨)
 
-MODEL_PATH = "resnet34_cifar10_bs64_epochs10.keras"  # 저장된 모델 경로
+MODEL_PATH = "resnet34_cifar10_bs64_epochs30.keras"  # 저장된 모델 경로
+
+
+def start_monitoring(output_filename):
+    # PID 얻기
+    pid = os.getpid()
+
+    # pidstat와 mpstat를 백그라운드로 실행하여 모니터링
+    pidstat_cmd = f"pidstat -p {pid} 1 > {output_filename}_pidstat.txt &"
+    mpstat_cmd = f"mpstat 1 > {output_filename}_mpstat.txt &"
+    
+    # 서브 프로세스로 백그라운드 실행
+    pidstat_process = subprocess.Popen(pidstat_cmd, shell=True, executable='/bin/bash')
+    mpstat_process = subprocess.Popen(mpstat_cmd, shell=True, executable='/bin/bash')
+    
+    return pidstat_process, mpstat_process
+
+
 
 def configure_gpu_settings():
     if not USE_GPU:
@@ -46,12 +64,23 @@ def load_model_and_predict():
 
     # 추론 시간 측정
     infer_time = []
-    for i in range(10):
+    for i in range(3):
         print('Predicting start!')
+        
+       
         start = time.time()
+        
+        # 모니터링 시작
+        output_filename = f"inference_monitoring_run{i}"
+        pidstat_process, mpstat_process = start_monitoring(output_filename)
+        
         result = model.predict(x_test)
         end = time.time()
         elapsed_time = end - start
+        
+        # 모니터링 종료
+        stop_monitoring(pidstat_process, mpstat_process)
+        
         print(f'Prediction took {elapsed_time} seconds.')
         infer_time.append(elapsed_time)
 
