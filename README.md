@@ -322,7 +322,10 @@ Err:          0
 
 softriq 의 경우 HI, NET_TX/RX, TASKLET, HRTIMER 에서 CPU0가 월등히 높은 수치
 
-SCHED 에서는 CPU1번이 약 2배정도 많은 수치를 보임 --> 딥러닝 에서도 체크
+SCHED 에서는 CPU1번이 약 2배정도 많은 수치를 보임 --> ResNet 추론에서도 동일한지 check
+
+
+
 
 
 
