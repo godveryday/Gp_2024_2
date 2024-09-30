@@ -324,6 +324,7 @@ softriq 의 경우 HI, NET_TX/RX, TASKLET, HRTIMER 에서 CPU0가 월등히 높�
 
 SCHED 에서는 CPU1번이 약 2배정도 많은 수치를 보임 --> ResNet 추론에서도 동일한지 check
 
+그런데 CPU에 대한 연구가 메리트가 있는지 의문
 
 
 
