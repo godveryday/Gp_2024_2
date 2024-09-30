@@ -8,7 +8,6 @@ Edge device : Jetson Orin Nano
 
 Jetpack 5.1.2 , Tensorflow==2.12.0+nv23.06
 
-but Original resnet으로 재학습해야됌
 
 ## Mid results // cpu
 ```
@@ -84,13 +83,10 @@ thread에 따른 효과 X
 
 
 추후 진행사항
-TensorRT 변환해서 추론 시간 측정
 
-1) CPU 추론 시 추론시간 --> pidstat 등으로 cpu사용률 체크
+오늘 Original resnet34으로 학습하고
 
-2) GPU 추론 시 추론시간을 줄이는 방법에 대한 연구 (여기에 중점)
-   
-
+기존 추론시간 측정 + cpu core별로 사용량 측정하는법, 메모리 사용량 측정 --> 엑셀 정리 하기
 
 
 
