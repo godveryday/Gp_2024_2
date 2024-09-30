@@ -9,7 +9,7 @@ Edge device : Jetson Orin Nano
 Jetpack 5.1.2 , Tensorflow==2.12.0+nv23.06
 
 
-## Mid results // cpu
+## First results // cpu
 ```
 Model used: resnet34_cifar10_bs64_epochs10.keras
 GPU used: No
@@ -40,7 +40,7 @@ Min inference time: 216.96071934700012 seconds
 thread가 증가할수록 추론시간이 단축
 
 
-## Mid results // gpu
+## First results // gpu
 
 ```
 Model used: resnet34_cifar10_bs64_epochs10.keras
@@ -81,14 +81,13 @@ Min inference time: 17.259194135665894 seconds
 thread에 따른 효과 X
 
 
+---
 
-추후 진행사항
+## Second
 
-오늘 Original resnet34으로 학습하고
+#### 위에 실험은 test.py로 돌린 것인데 처음에 MAX Pooling 없어서 더 오래걸렸음
 
-기존 추론시간 측정 + cpu core별로 사용량 측정하는법, 메모리 사용량 측정 --> 엑셀 정리 하기
-
-GPU관점에서는 결국 TensorRT?인듯
+이후 결과는 너무 길어서 numpy로 정리하자
 
 
 
