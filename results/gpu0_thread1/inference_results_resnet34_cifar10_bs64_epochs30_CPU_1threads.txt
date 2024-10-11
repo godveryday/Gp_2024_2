@@ -1,0 +1,6 @@
+Model used: resnet34_cifar10_bs64_epochs30.keras
+GPU used: No
+CPU Threads used: 1
+Average inference time: 159.51784992218018 seconds
+Max inference time: 160.33873987197876 seconds
+Min inference time: 159.10368084907532 seconds
