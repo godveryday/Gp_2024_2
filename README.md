@@ -326,6 +326,15 @@ SCHED 에서는 CPU1번이 약 2배정도 많은 수치를 보임 --> ResNet 추
 
 그런데 CPU에 대한 연구가 메리트가 있는지 의문
 
+<br/><br/>
+
+Interrupt파악 X , 딥러닝 모델에 따른 가속기 성능 측정
+
+Resnet모델에 TensorRT 추가해서 성능확인해보자
+
+### TensorRT
+
+
 
 
 
