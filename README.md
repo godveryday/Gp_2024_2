@@ -318,22 +318,6 @@ Err:          0
   
 
 
-이거 기반으로 mpstat -A 에 대한 분석해보고, interrupts 정리해보자
-
-softriq 의 경우 HI, NET_TX/RX, TASKLET, HRTIMER 에서 CPU0가 월등히 높은 수치
-
-SCHED 에서는 CPU1번이 약 2배정도 많은 수치를 보임 --> ResNet 추론에서도 동일한지 check
-
-그런데 CPU에 대한 연구가 메리트가 있는지 의문
-
-<br/><br/>
-
-Interrupt파악 X , 딥러닝 모델에 따른 가속기 성능 측정
-
-Resnet모델에 TensorRT 추가해서 성능확인해보자
-
-### TensorRT
-
 
 
 
